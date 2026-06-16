@@ -27,7 +27,7 @@ jobs:
         with:
           context: "{{defaultContext}}:codebase/rdicidr-0.1.0"
           push: true
-          tags: vinicpires/fsl:${{ github.sha }},latest
+          tags: vinicpires/fsl:${{ github.sha }},vinicpires/fsl:latest
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v1
         with:
