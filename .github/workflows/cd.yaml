@@ -1,5 +1,9 @@
 name: CD
 
+defaults:
+  run:
+    working-directory: ./codebase/rdicidr-0.1.0
+
 on:
   push:
     branches:
@@ -25,7 +29,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v7
         with:
-          file: codebase/rdicidr-0.1.0/Dockerfile
           push: true
           tags: vinicpires/fsl:${{ github.sha }},latest
       - name: Deploy to EC2
